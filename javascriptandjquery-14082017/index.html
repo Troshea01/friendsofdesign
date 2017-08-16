@@ -1,44 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
     <title>Your page title here :)</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- FONT
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-    <!-- CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Load our grid and the CSS any JQuery plugins, if they have any... --> 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/fullpage.min.css">
+    <!-- ...then load our CSS file that can overwrite any of the styles. -->
+    <link rel="stylesheet" href="css/application.css">
 
-    <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h4>Basic Page</h4>
-          <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <div id="fullpage">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="twelve columns">
+              <h4>Basic Page</h4>
+              <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="example-grid">
+          <!-- .container is main centered wrapper -->
+          <div class="container">
+            <!-- columns should be the immediate child of a .row -->
+            <div class="row">
+              <div class="one column">One</div>
+              <div class="eleven columns">Eleven</div>
+            </div>
+
+            <!-- just use a number and class 'column' or 'columns' -->
+            <div class="row">
+              <div class="two columns">Two</div>
+              <div class="ten columns">Ten</div>
+            </div>
+
+            <div class="row">
+              <div class="three columns">Three</div>
+              <div class="nine columns">Nine</div>
+            </div>
+
+            <div class="row">
+              <div class="four columns">Four</div>
+              <div class="eight columns">Eight</div>
+            </div>
+
+            <div class="row">
+              <div class="five columns">Five</div>
+              <div class="seven columns">Seven</div>
+            </div>
+
+            <div class="row">
+              <div class="six columns">Six</div>
+              <div class="six columns">Six</div>
+            </div>
+
+            <div class="row">
+              <div class="seven columns">Seven</div>
+              <div class="five columns">Five</div>
+            </div>
+
+            <div class="row">
+              <div class="eight columns">Eight</div>
+              <div class="four columns">Four</div>
+            </div>
+
+            <div class="row">
+              <div class="nine columns">Nine</div>
+              <div class="three columns">Three</div>
+            </div>
+
+            <div class="row">
+              <div class="ten columns">Ten</div>
+              <div class="two columns">two</div>
+            </div>
+
+            <div class="row">
+              <div class="eleven columns">Eleven</div>
+              <div class="one columns">One</div>
+            </div>
+
+            <div class="row">
+              <div class="twelve columns">Twelve</div>
+            </div>
+
+            <!-- there are a few shorthand columns widths as well -->
+            <div class="row">
+              <div class="one-third column">1/3</div>
+              <div class="two-thirds column">2/3</div>
+            </div>
+
+            <div class="row">
+              <div class="one-half column">1/2</div>
+              <div class="one-half column">1/2</div>
+            </div>
+          </div>
+          <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
         </div>
       </div>
     </div>
-  <!-- End Document
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+    <!-- Load JQuery and plugins... -->
     <script src='js/jquery.min.js'></script>
+    <script src='js/jquery.fullpage.min.js'></script>
+    <!-- ...then load our JavaScript file that will use JQuery and the plugins. -->
+    <script src='js/application.js'></script>
   </body>
 </html>
