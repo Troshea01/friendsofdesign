@@ -1,3 +1,10 @@
+ul#main-menu {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 9999;
+}
+
 .example-grid .column, .example-grid .columns {
   background: #EEE;
   text-align: center;
