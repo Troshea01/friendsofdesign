@@ -8,13 +8,13 @@ $(document).ready(function() {
     var mainMenuHtml = mainMenu.html();
     var sectionAnchor = $(this).attr('data-anchor');
 
-    mainMenuHtml += `<li><a data-section-anchor='${sectionAnchor}'>${title}</a><ul>`;
+    mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor='${sectionAnchor}'>${title}</a><ul>`;
 
     $(this).find('.slide').each(function(){
       var title = $(this).attr('data-title');
       var slideAnchor = $(this).attr('data-anchor');
   
-      mainMenuHtml += `<li><a data-section-anchor='${sectionAnchor}' data-slide-anchor='${slideAnchor}'>${title}</a></li>`;
+      mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor='${sectionAnchor}' data-slide-anchor='${slideAnchor}'>${title}</a></li>`;
   
       mainMenu.html(mainMenuHtml);
     })
@@ -25,9 +25,9 @@ $(document).ready(function() {
   })
 
   mainMenu.on('click', 'a', function(event){
-    var slideAnchor = event.target.attr('data-slide-anchor');
-    var sectionAnchor = event.target.attr('data-section-anchor');
+    var slideAnchor = $(event.target).attr('data-slide-anchor');
+    var sectionAnchor = $(event.target).attr('data-section-anchor');
 
-    $.fn.fullpage.moveTo(slideAnchor, sectionAnchor);
+    $.fn.fullpage.moveTo(sectionAnchor, slideAnchor);
   });
 });
