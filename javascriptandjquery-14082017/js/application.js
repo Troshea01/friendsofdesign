@@ -1,20 +1,53 @@
 $(document).ready(function() {
+  var timer = null;
   var mainMenu = $('#main-menu');
 
-  $('#fullpage').fullpage();
+  setTimeout(function(){
+    mainMenu.removeClass('hidden')
+  }, 1000);
+
+  setTimeout(function(){
+    mainMenu.addClass('hidden')
+  }, 5000);
+
+  $(document).scroll(function() {
+    var height = $(window).height() - mainMenu.height();
+    var position = $(document).scrollTop();
+
+    if(position > height){
+      mainMenu.removeClass('on-landing-page');
+    } else {
+      mainMenu.addClass('on-landing-page');
+    }
+  });
+
+  $("#landing-page").on('mousemove', function () {
+    mainMenu.removeClass('hidden');
+    try {
+      clearTimeout(timer);
+    } catch (e) {}
+    timer = setTimeout(function () {
+      mainMenu.addClass('hidden');
+    }, 5000);
+  });
+
+  $('#fullpage').fullpage({
+    fitToSection: false,
+    autoScrolling: false
+  });
 
   $('#fullpage .section').each(function(){
     var title = $(this).attr('data-title');
     var mainMenuHtml = mainMenu.html();
     var sectionAnchor = $(this).attr('data-anchor');
 
-    mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor='${sectionAnchor}'>${title}</a><ul>`;
+    mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor="${sectionAnchor}">${title}</a><ul>`;
 
     $(this).find('.slide').each(function(){
       var title = $(this).attr('data-title');
       var slideAnchor = $(this).attr('data-anchor');
   
-      mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor='${sectionAnchor}' data-slide-anchor='${slideAnchor}'>${title}</a></li>`;
+      mainMenuHtml += `<li><a href="javascript:void(0);" data-section-anchor="${sectionAnchor}" data-slide-anchor="${slideAnchor}">${title}</a></li>`;
   
       mainMenu.html(mainMenuHtml);
     })
