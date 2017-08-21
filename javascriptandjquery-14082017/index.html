@@ -12,22 +12,33 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/fullpage.min.css">
+    <link rel="stylesheet" href="css/video-js.css">
+
     <!-- ...then load our CSS file that can overwrite any of the styles. -->
     <link rel="stylesheet" href="css/application.css">
+
+    <script src='js/preload.js'></script>
   </head>
-  <body>
+  <body class="loading">
+    <div id="pre-loader"></div>
     <ul id="main-menu" class="on-landing-page hidden"></ul>
 
     <div id="fullpage">
-      <div id="landing-page" class="section" data-title="Basic Page" data-anchor="basic">
-        <!-- <div class="container">
+      <div id="landing-page" class="section" data-title="Home" data-anchor="home">
+        <video id="landing-page-video" class="video-js">
+          <source src="video/20176886.mp4" type='video/mp4'>
+        </video>
+      </div>
+
+      <div class="section" data-title="Basic Page" data-anchor="basic">
+        <div class="container">
           <div class="row">
             <div class="twelve columns">
               <h4>Basic Page</h4>
               <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
 
       <div class="section"  data-title="The Grid" data-anchor="grid">
@@ -114,6 +125,7 @@
     <!-- Load JQuery and plugins... -->
     <script src='js/jquery.min.js'></script>
     <script src='js/jquery.fullpage.min.js'></script>
+    <script src='js/video.js'></script>
     <!-- ...then load our JavaScript file that will use JQuery and the plugins. -->
     <script src='js/application.js'></script>
   </body>

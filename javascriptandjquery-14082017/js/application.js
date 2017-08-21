@@ -1,6 +1,11 @@
 $(document).ready(function() {
   var timer = null;
   var mainMenu = $('#main-menu');
+  var landingPageVideo = videojs('landing-page-video', {
+    controls: true,
+    autoplay: false,
+    preload: 'auto'
+  });
 
   setTimeout(function(){
     mainMenu.removeClass('hidden')
@@ -8,7 +13,7 @@ $(document).ready(function() {
 
   setTimeout(function(){
     mainMenu.addClass('hidden')
-  }, 5000);
+  }, 3000);
 
   $(document).scroll(function() {
     var height = $(window).height() - mainMenu.height();
@@ -62,5 +67,9 @@ $(document).ready(function() {
     var sectionAnchor = $(event.target).attr('data-section-anchor');
 
     $.fn.fullpage.moveTo(sectionAnchor, slideAnchor);
+  });
+
+  landingPageVideo.ready(function() {
+    videoLoading = false;
   });
 });
