@@ -2,9 +2,10 @@ $(document).ready(function() {
   var timer = null;
   var mainMenu = $('#main-menu');
   var landingPageVideo = videojs('landing-page-video', {
-    controls: true,
+    controls: false,
     autoplay: false,
-    preload: 'auto'
+    preload: 'auto',
+    loop: true
   });
 
   setTimeout(function(){
@@ -69,7 +70,10 @@ $(document).ready(function() {
     $.fn.fullpage.moveTo(sectionAnchor, slideAnchor);
   });
 
-  landingPageVideo.ready(function() {
+  landingPageVideo.on('canplaythrough', function(){
     videoLoading = false;
+    landingPageVideo.play();
+
+    $('body').removeClass('loading');
   });
 });

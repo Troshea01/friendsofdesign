@@ -16,8 +16,6 @@
 
     <!-- ...then load our CSS file that can overwrite any of the styles. -->
     <link rel="stylesheet" href="css/application.css">
-
-    <script src='js/preload.js'></script>
   </head>
   <body class="loading">
     <div id="pre-loader"></div>
@@ -26,7 +24,8 @@
     <div id="fullpage">
       <div id="landing-page" class="section" data-title="Home" data-anchor="home">
         <video id="landing-page-video" class="video-js">
-          <source src="video/20176886.mp4" type='video/mp4'>
+          <source src="video/20176886.webm" type='video/mp4'>
+          <!-- <source src="https://github.com/undefinedinc/friendsofdesign/blob/master/javascriptandjquery-14082017/video/20176886.mp4?raw=true" type='video/mp4'> -->
         </video>
       </div>
 
@@ -130,3 +129,63 @@
     <script src='js/application.js'></script>
   </body>
 </html>
+
+<imput name="emil" />
+<input name="colour[]" />
+<input name="colour[]" />
+<input name="colour[]" />
+
+function generateBumpMap(options={}){
+  var isObject = Object.prototype.toString.call(options) == '[object Object]';
+
+  if (!isObject) {
+    throw 'Not a valid options object'
+  }
+
+  var defaults = {
+    blur: 0,
+    bumpDetails: false
+  }
+
+  for(key in defaults) {
+    if (!options.hasOwnProperty(key) ) {
+      options[key] = defaults[key]
+    }
+  }
+
+  return options
+}
+
+function generateNormalMap(){
+  return 'Called from a function: generateNormalMap()'
+}
+
+var filters = [
+{
+  category: '3D',
+  categoryFilters: [
+    { name: 'Generate Bump Map', action: 'generateBumpMap()' },
+    { name: 'Generate Normal Map', action: 'generateNormalMap()' }
+  ]
+}, {
+  category: 'Blur',
+  categoryFilters: [
+    { name: 'Blur Average', action: 'generateBumpMap()' },
+    { name: 'Blue More', action: 'generateNormalMap()' }
+  ]
+}
+]
+
+for (i=0;i<filters.length;i++) {
+  var category = filters[i].category
+  var categoryFilters = filters[i].categoryFilters
+
+  console.log('-----------------------')
+  console.log( category )
+  
+  for (c=0;c<categoryFilters.length;c++) {
+    console.log( categoryFilters[c].name )
+  }
+}
+
+var MyVar;
