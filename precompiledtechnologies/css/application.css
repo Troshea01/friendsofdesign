@@ -50,6 +50,19 @@ ul#main-menu {
   transition: all .2s ease-in;
   background-color: white;
 }
+ul#main-menu li {
+  margin: 0;
+  display: inline-block;
+  list-style: none;
+}
+ul#main-menu a {
+  color: #212121;
+  display: block;
+  padding: 10px 20px;
+}
+ul#main-menu a:hover {
+  color: #474747;
+}
 ul#main-menu .hidden {
   display: none;
 }
@@ -60,22 +73,8 @@ ul#main-menu .on-landing-page {
   background-color: transparent;
 }
 
-ul#main-menu li {
-  margin: 0;
-  display: inline-block;
-  list-style: none;
-}
-
-ul#main-menu li a {
-  color: #212121;
-  display: block;
-  padding: 10px 20px;
-}
-
-ul#main-menu li a:hover {
-  color: #474747;
-}
-
+ul#main-menu li
+ul#main-menu li
 ul#main-menu ul {
   display: none;
 }

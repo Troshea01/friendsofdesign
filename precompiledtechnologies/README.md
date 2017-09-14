@@ -1,1 +1,1 @@
-# JavaScript & JQuery
+# Precompiled Technologies
