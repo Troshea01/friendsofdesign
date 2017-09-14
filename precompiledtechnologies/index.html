@@ -8,15 +8,23 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <!-- ...then load our CSS file that can overwrite any of the styles. -->
     <link rel="stylesheet" href="css/application.css">
   </head>
   <body>
     <div id="app">
-      {{ title }}
+      <select v-if="templates.can_list">
+        <template v-for="template in templates.list">
+          <option v-bind:value="template.value">{{ template.name }}</option>
+        </template>
+      </select>
+
+      <div class="ct-chart"></div>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src='js/application.js'></script>
   </body>
 </html>
