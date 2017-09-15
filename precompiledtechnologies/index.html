@@ -14,11 +14,12 @@
   <body>
     <div id="app">
       <link rel="stylesheet" v-bind:href="current_template.value">
+
+      <h1>{{ title }}</h1>
+
       <template v-for="template in templates">
         <button v-on:click="setTemplate(template.id)">{{ template.name }}</button>
       </template>
-
-      <h1>{{ title }}</h1>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
