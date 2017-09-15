@@ -1,21 +1,23 @@
-var users = []
+var users = [];
 var templates = [
-  { name: 'Dark', value: 'css/dark.css'},
-  { name: 'Light', value: 'css/light.css'}
-]
-
+  { id: 1, name: 'Dark', value: 'css/dark.css'},
+  { id: 2, name: 'Light', value: 'css/light.css'}
+];
 
 var app = new Vue({
   el: '#app',
   data: {
-    title: "Title",
-    templates: {
-      list: templates,
-      can_list: templates.length > 1
+    title: "Hello, VueJS",
+    templates: templates,
+    current_template: templates[0]
+  },
+  methods: {
+    setTemplate: function(id){
+      var selected_template = this.templates.filter(function(ele){
+        return (ele.id == id)
+      })[0];
+
+      this.current_template = selected_template;
     }
   }
-})
-
-new Chartist.Pie('.ct-chart', {
-  series: [5, 3, 4]
-}, {});
+});

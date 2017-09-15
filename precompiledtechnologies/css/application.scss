@@ -1,8 +1,10 @@
+$loading-image: '../img/loading.gif';
+
 @import 'base';
-@import 'mixins';
 
 body {
   background-size: cover;
+  background-color: #ffffff;
   background-position: center;
 
   #pre-loader {
@@ -32,7 +34,7 @@ video {
   height: 100%;
   z-index: 99999;
   position: absolute;
-  background: url('../img/loading.gif') #ffffff center no-repeat;
+  background: url($loading-image) #ffffff center no-repeat;
 }
 
 #landing-page-video {
