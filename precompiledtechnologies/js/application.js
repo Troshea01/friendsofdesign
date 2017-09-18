@@ -1,4 +1,6 @@
-var users = [];
+var users = [
+  {id: 1, first_name: 'John', last_name: 'Doe', email: 'jdoe@fuck.it'}
+];
 var templates = [
   { id: 1, name: 'Dark', value: 'css/dark.css'},
   { id: 2, name: 'Light', value: 'css/light.css'}
@@ -8,7 +10,10 @@ var app = new Vue({
   el: '#app',
   data: {
     title: "Hello, VueJS",
+    users: users,
     templates: templates,
+//    tableHeader: ['id', 'first_name', 'last_name'],
+    default_template: 2,
     current_template: templates[0]
   },
   methods: {
@@ -18,6 +23,13 @@ var app = new Vue({
       })[0];
 
       this.current_template = selected_template;
+    },
+    tableHeader: function(tableData) {
+      var keys = [];
+      for(key in tableData[0]){
+        keys.push(key);
+      }
+      return keys;
     }
   }
 });
