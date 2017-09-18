@@ -15,29 +15,32 @@
     <div id="app">
       <link rel="stylesheet" v-bind:href="current_template.value">
 
-      <h1>{{ title }}</h1>
+      <main role="main" v-bind:class="current_template.name">
+        <h1>{{ title }}</h1>
+        <img class="logo" v-bind:src="current_template.logo"/>
 
-      <template v-for="template in templates">
-        <button v-on:click="setTemplate(template.id)">
-          {{ template.name }}
-          <span v-if="template.id == default_template">(Default)</span>
-        </button>
-      </template>
+        <template v-for="template in templates">
+          <button v-on:click="setTemplate(template.id)">
+            {{ template.name }}
+            <span v-if="template.id == default_template">(Default)</span>
+          </button>
+        </template>
 
-      <table style="width:100%">
-        <tr>
-          <template v-for="value in tableHeader(users)">
-            <th>{{ value }}</th>
-          </template>
-        </tr>
+        <table style="width:100%">
+          <tr>
+            <template v-for="value in tableHeader(users)">
+              <th>{{ value }}</th>
+            </template>
+          </tr>
 
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-          <td>50</td>
-        </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+          </tr>
 
-      </table>
+        </table>
+      </main>
     </div>
 
     <script src="https://unpkg.com/vue"></script>

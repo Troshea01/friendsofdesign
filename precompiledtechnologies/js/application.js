@@ -2,8 +2,8 @@ var users = [
   {id: 1, first_name: 'John', last_name: 'Doe', email: 'jdoe@fuck.it'}
 ];
 var templates = [
-  { id: 1, name: 'Dark', value: 'css/dark.css'},
-  { id: 2, name: 'Light', value: 'css/light.css'}
+  { id: 1, name: 'Dark', value: 'css/dark.css', logo: 'css/dark.css'},
+  { id: 2, name: 'Light', value: 'css/light.css', logo: 'css/light.css'}
 ];
 
 var app = new Vue({
@@ -12,7 +12,6 @@ var app = new Vue({
     title: "Hello, VueJS",
     users: users,
     templates: templates,
-//    tableHeader: ['id', 'first_name', 'last_name'],
     default_template: 2,
     current_template: templates[0]
   },
