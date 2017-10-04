@@ -1,6 +1,7 @@
 var users = [
   {id: 1, first_name: 'John', last_name: 'Doe', email: 'jdoe@fuck.it'}
 ];
+
 var templates = [
   { id: 1, name: 'Dark', value: 'css/dark.css', logo: 'css/dark.css'},
   { id: 2, name: 'Light', value: 'css/light.css', logo: 'css/light.css'}
