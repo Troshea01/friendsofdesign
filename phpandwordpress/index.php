@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
   <head>
-    <meta charset="utf-8">
-    <title><?php echo title; ?></title>
-    <meta name="author" content="">
-    <meta name="description" content="">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php get_template_part('components/layout/head'); ?>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
+
     <header>
-      gfdgdfgdfgfdgfdgfd
+      <?php get_header(); ?>
     </header>
 
     <main>
@@ -18,7 +14,7 @@
     </main>
 
     <footer>
-      gfdgdfgdfgfdgfdgfd
+      <?php get_footer(); ?>
     </footer>
   </body>
 </html>
