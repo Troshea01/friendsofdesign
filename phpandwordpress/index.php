@@ -9,8 +9,16 @@
       <?php get_header(); ?>
     </header>
 
-    <main>
-      gfdgdfgdfgfdgfdgfd
+    <main id="main" class="site-main" role="main">
+      <?php
+        if ( have_posts() ) :
+          while ( have_posts() ) : the_post();
+            get_template_part('components/content/content', get_post_format());
+          endwhile;
+        else:
+          // Show no posts
+        endif;
+      ?>
     </main>
 
     <footer>
