@@ -8,9 +8,4 @@ Version: 0.1
 Text Domain: jellybean
 */
 
-@import url("css/vendor/normalize.css");
-@import url("css/vendor/skeleton.css");
-
-a {
-	color: red;
-}
+@import url("css/vendor/main.css");

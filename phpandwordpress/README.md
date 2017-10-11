@@ -1,1 +1,0 @@
-# PHP Essentials & WordPress
