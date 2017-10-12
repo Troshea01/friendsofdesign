@@ -1,7 +1,7 @@
 <article>
-	<h1><?php the_title(); ?></h1>
+	<strong><?php the_title(); ?></strong>
 	<div class="post-content">
-		<?php the_content(); ?>
+		<?php the_excerpt(); ?>
 	</div>
 	<a href="<?php the_permalink() ?>">Full post</a>
 </article>
