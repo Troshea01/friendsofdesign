@@ -22,6 +22,7 @@
     </main>
 
     <footer>
+      <?php get_sidebar(); ?>
       <?php get_footer(); ?>
     </footer>
   </body>
