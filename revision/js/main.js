@@ -1,29 +1,23 @@
-var user = {
-	firstName: 'John',
-	lastName: 'Doe',
-	age: 41,
-	isMissingRightArmDueToFrostBite: true,
-	song: {
-		title: 'Some country song about a dead dog',
-		artist: 'A guy with a sister that is his mother'
-	},
-	children: [{
-		firstName: 'Ray',
-		lastName: 'Doe',
-		age: 2
-	}, {
-		firstName: 'Me',
-		lastName: 'Doe',
-		age: 17
-	}]
-}
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+		scrollOverflow: true
+	});
 
-console.log(user);
-console.log( name(user) );
-console.log(user.children);
-console.log(user.children[0]);
-console.log( name(user.children[0]) );
+	$.fn.fullpage.setAllowScrolling(false);
+	$.fn.fullpage.setKeyboardScrolling(false);
+});
 
-function name(person) {
-	return person.firstName + ' ' + person.lastName
-}
+var introVideo = videojs('intro', {
+  controls: true,
+  autoplay: true,
+  preload: 'auto'
+});
+
+introVideo.on('canplaythrough', function() {
+	var body = document.getElementsByTagName('body')[0];
+
+	body.classList.remove('is-loading');
+
+	$.fn.fullpage.setAllowScrolling(true);
+	$.fn.fullpage.setKeyboardScrolling(true);
+});

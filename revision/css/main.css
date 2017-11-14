@@ -1,10 +1,34 @@
 @import url('vendor.css');
 
+body #preloader {
+	display: none;
+}
+
+body.is-loading {
+	overflow: none;
+}
+
+body.is-loading #preloader {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.card img {
+	width: 100%;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
 /* Larger than phablet */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+	#gallery .column:first-child,
+	#gallery .columns:first-child {
+    margin-left: 4%;
+	}	
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}
